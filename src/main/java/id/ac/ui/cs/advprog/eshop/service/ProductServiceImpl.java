@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product getProduct(long id){
+    public Product getProduct(String id){
         return productRepository.getById(id);
     }
 
@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(String id) {
         productRepository.delete(id);
     }
 

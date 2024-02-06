@@ -10,17 +10,15 @@ import java.util.List;
 @Repository
 public class ProductRepository {
    private List<Product> productData = new ArrayList<>();
-   private int idCounter = 0;
    
    public Product create(Product product){
     productData.add(product);
-    product.setId(++idCounter);
     return product;
    }
 
-   public Product getById(long id){
+   public Product getById(String id){
     for (Product product : productData){
-        if (product.getId() == id){
+        if (product.getProductId().equals(id)){
             return product;
         }
     }
@@ -28,15 +26,15 @@ public class ProductRepository {
   }
 
   public Product save(Product product){
-    int idxProductBefore = productData.indexOf(getById(product.getId()));
-    delete(product.getId());
+    int idxProductBefore = productData.indexOf(product);
+    delete(product.getProductId());
     productData.add(idxProductBefore, product);
     return product;
   }
 
-   public void delete(long id){  
+   public void delete(String id){  
     for (Product product : productData){
-        if (product.getId() == id){
+        if (product.getProductId().equals(id)){
             productData.remove(product);
             break;
         }
