@@ -26,7 +26,6 @@ public class ProductRepository {
   }
 
   public Product save(Product product){
-    // int idxProductBefore = productData.indexOf(getById(product.getProductId()));
     int idxProductBefore = productData.indexOf(product);
     delete(product.getProductId());
     productData.add(idxProductBefore, product);
