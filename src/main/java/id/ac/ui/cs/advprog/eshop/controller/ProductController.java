@@ -29,6 +29,24 @@ public class ProductController {
         return "redirect:list";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editProductPage(@PathVariable Long id, Model model){
+        model.addAttribute("product", service.getProduct(id));
+        return "editProduct";
+    }
+
+    @PostMapping("/{id}")
+    public String updateProduct(@PathVariable Long id, @ModelAttribute("product") Product product, Model model){
+        
+        Product chosenProduct = service.getProduct(id);
+        chosenProduct.setId(id);
+        chosenProduct.setName(product.getName());
+        chosenProduct.setQuantity(product.getProductQuantity());
+        
+        service.updateProduct(chosenProduct); // penting apa enggak?
+        return "redirect:list";
+    }
+
     @GetMapping("/{id}")
     public String deleteProduct(@PathVariable long id){
         service.delete(id);

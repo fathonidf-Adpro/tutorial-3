@@ -18,6 +18,22 @@ public class ProductRepository {
     return product;
    }
 
+   public Product getById(long id){
+    for (Product product : productData){
+        if (product.getId() == id){
+            return product;
+        }
+    }
+    return null;
+  }
+
+  public Product save(Product product){
+    int idxProductBefore = productData.indexOf(getById(product.getId()));
+    delete(product.getId());
+    productData.add(idxProductBefore, product);
+    return product;
+  }
+
    public void delete(long id){  
     for (Product product : productData){
         if (product.getId() == id){
