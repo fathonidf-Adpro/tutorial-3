@@ -21,6 +21,11 @@ public class ProductServiceImpl implements ProductService{
         return product;
     }
 
+    @Override
+    public void delete(long id) {
+        productRepository.delete(id);
+    }
+
     @Override 
     public List<Product> findAll(){
         Iterator<Product> productIterator = productRepository.findAll();
