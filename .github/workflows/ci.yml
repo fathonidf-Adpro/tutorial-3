@@ -1,4 +1,4 @@
-name: Continous Integration(CI)
+name: Continous Integration (CI)
 
 ## Run CI jobs on all branches by default
 on:
