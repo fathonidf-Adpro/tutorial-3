@@ -6,13 +6,6 @@ plugins {
 	id("org.sonarqube") version "4.4.1.3373"
 }
 
-group = "id.ac.ui.cs.advprog"
-version = "0.0.1-SNAPSHOT"
-
-java {
-	sourceCompatibility = JavaVersion.VERSION_21
-}
-
 sonar {
   properties {
     property("sonar.projectKey", "fathonidf-adpro_eshop")
@@ -20,6 +13,14 @@ sonar {
     property("sonar.host.url", "https://sonarcloud.io")
   }
 }
+
+group = "id.ac.ui.cs.advprog"
+version = "0.0.1-SNAPSHOT"
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+}
+
 
 configurations {
 	compileOnly {
@@ -83,4 +84,9 @@ tasks.test {
 
 tasks.jacocoTestReport {
 	dependsOn(tasks.test)
+	
+	reports {
+    html.required = true
+    xml.required = true
+  }
 }
