@@ -28,4 +28,9 @@ class ProductTest {
     void testGetProductQuantity(){
         assertEquals(100, this.product.getProductQuantity());
     }
+
+    @Test
+    void testToString(){
+        assertEquals("Sampo Cap Bambang:100", this.product.toString());
+    }
 }
