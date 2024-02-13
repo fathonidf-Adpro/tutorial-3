@@ -40,9 +40,7 @@ public class ProductController {
 
     @PostMapping("/{id}")
     public String updateProduct(@ModelAttribute Product product){
-        System.out.printf("di controller, idnya %s itu %s\n", product.getProductName(), product.getProductId());
-        
-        service.updateProduct(product); // penting apa enggak?
+        service.updateProduct(product);
         return redirectList;
     }
 
