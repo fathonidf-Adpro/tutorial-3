@@ -28,7 +28,6 @@ public class ProductController {
     @PostMapping("/create")
     public String createProductPost(@ModelAttribute Product product, Model model){
         service.create(product);
-        System.out.printf("terbuat %s dengan id %s\n", product.getProductName(), product.getProductId());
         return redirectList;
     }
 
