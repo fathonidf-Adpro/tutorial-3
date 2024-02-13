@@ -3,6 +3,7 @@ plugins {
 	jacoco
 	id("org.springframework.boot") version "3.2.2"
 	id("io.spring.dependency-management") version "1.1.4"
+	id("org.sonarqube") version "4.4.1.3373"
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -10,6 +11,14 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_21
+}
+
+sonar {
+  properties {
+    property("sonar.projectKey", "fathonidf-adpro_eshop")
+    property("sonar.organization", "fathonidf-adpro")
+    property("sonar.host.url", "https://sonarcloud.io")
+  }
 }
 
 configurations {

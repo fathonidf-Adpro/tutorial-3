@@ -77,6 +77,7 @@ public class ProductRepositoryTest {
 
         Iterator<Product> productIterator = productRepository.findAll();
         assertFalse(productIterator.hasNext());
+        assertNull(productRepository.getById(product1.getProductId()));
     }
 
     @Test
@@ -103,6 +104,7 @@ public class ProductRepositoryTest {
 
         assertEquals(getEditedProduct.getProductName(), currentProduct.getProductName());
     }
+    
 
 }
 

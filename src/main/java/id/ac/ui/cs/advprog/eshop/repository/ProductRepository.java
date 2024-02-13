@@ -17,28 +17,31 @@ public class ProductRepository {
    }
 
    public Product getById(String id){
-    for (Product product : productData){
-        if (product.getProductId().equals(id)){
-            return product;
-        }
+    Product product = null;
+    for (int i = 0; i< productData.size(); i++ ){
+      if(productData.get(i).getProductId().equals(id)){
+        product = productData.get(i);
+      }
     }
-    return null;
-  }
-
-  public Product save(Product product){
-    int idxProductBefore = productData.indexOf(product);
-    delete(product.getProductId());
-    productData.add(idxProductBefore, product);
     return product;
   }
 
-   public void delete(String id){  
-    for (Product product : productData){
-        if (product.getProductId().equals(id)){
-            productData.remove(product);
-            break;
-        }
-    }
+  public Product save(Product productUpdate){
+    Product product = null;
+    for (Product productIterate : productData){
+      if(productIterate.getProductId().equals(productUpdate.getProductId())){
+          productIterate.setProductName(productUpdate.getProductName());
+          productIterate.setProductQuantity(productUpdate.getProductQuantity());
+          product = productIterate;
+      }
+  }
+  return product;
+  }
+
+   public Product delete(String id){
+    Product deletedProduct = getById(id);
+    productData.remove(deletedProduct);
+    return deletedProduct;
   }
 
    public Iterator<Product> findAll(){
