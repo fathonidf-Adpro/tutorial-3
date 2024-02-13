@@ -38,12 +38,7 @@ public class ProductController {
     @PostMapping("/{id}")
     public String updateProduct(@PathVariable String id, @ModelAttribute("product") Product product, Model model){
         
-        Product chosenProduct = service.getProduct(id);
-        chosenProduct.setProductId(id);
-        chosenProduct.setProductName(product.getProductName());
-        chosenProduct.setProductQuantity(product.getProductQuantity());
-        
-        service.updateProduct(chosenProduct); // penting apa enggak?
+        service.updateProduct(product); // penting apa enggak?
         return "redirect:list";
     }
 
