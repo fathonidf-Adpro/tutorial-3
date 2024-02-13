@@ -12,6 +12,13 @@
 
     <form th:action="@{/product/{id}(id=${product.productId})}" th:object="${product}" method="post" onsubmit="return validateForm()">
         <div class="form-group">
+            <input
+                th:field="*{productId}"
+                type="hidden"
+                th:value="*{productId}"
+            />
+        </div>
+        <div class="form-group">
             <label for="nameInput">Name</label>
             <input th:field="*{productName}" type="text" class="form-control mb-4 col-4" id="nameInput" placeholder="${product.productName}">
         </div>

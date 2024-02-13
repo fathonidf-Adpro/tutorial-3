@@ -14,4 +14,8 @@ public class Product {
     public Product() {
         this.productId = UUID.randomUUID().toString();
       }
+
+    public String toString(){
+      return String.format("%s:%d", productName, productQuantity);
+    }
 }

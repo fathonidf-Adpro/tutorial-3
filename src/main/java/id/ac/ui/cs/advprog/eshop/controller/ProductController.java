@@ -38,9 +38,8 @@ public class ProductController {
     }
 
     @PostMapping("/{id}")
-    public String updateProduct(@PathVariable String id, @ModelAttribute("product") Product product, Model model){
-        
-        service.updateProduct(product); // penting apa enggak?
+    public String updateProduct(@ModelAttribute Product product){
+        service.updateProduct(product);
         return redirectList;
     }
 

@@ -27,15 +27,11 @@ public class ProductRepository {
   }
 
   public Product save(Product productUpdate){
-    Product product = null;
-    for (Product productIterate : productData){
-      if(productIterate.getProductId().equals(productUpdate.getProductId())){
-          productIterate.setProductName(productUpdate.getProductName());
-          productIterate.setProductQuantity(productUpdate.getProductQuantity());
-          product = productIterate;
-      }
-  }
-  return product;
+    String productUpdateId = productUpdate.getProductId();
+    Product productInRepository = this.getById(productUpdateId);
+    int idxProductBefore = productData.indexOf(productInRepository);
+    productData.set(idxProductBefore, productUpdate);
+    return productUpdate;
   }
 
    public Product delete(String id){
