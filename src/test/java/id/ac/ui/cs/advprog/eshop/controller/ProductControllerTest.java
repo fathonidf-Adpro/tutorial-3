@@ -63,7 +63,7 @@ class ProductControllerTest {
         product.setProductName("Kue Lapis");
         product.setProductQuantity(1);
 
-        String pageString = productController.updateProduct(product.getProductId(), product, model);
+        String pageString = productController.updateProduct(product);
         assertEquals("redirect:list", pageString);
         verify(service, times(1)).create(product);
         verify(service, times(1)).updateProduct(product);

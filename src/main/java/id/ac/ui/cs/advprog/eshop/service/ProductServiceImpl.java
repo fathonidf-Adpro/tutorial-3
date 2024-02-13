@@ -28,7 +28,10 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product updateProduct(Product product){
-        return productRepository.save(product);
+        System.out.printf("di service, idnya %s itu %s\n", product.getProductName(), product.getProductId());
+        productRepository.save(product);
+
+        return product;
     }
 
     @Override

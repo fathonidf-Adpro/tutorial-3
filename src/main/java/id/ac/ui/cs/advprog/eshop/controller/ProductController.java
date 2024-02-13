@@ -28,6 +28,7 @@ public class ProductController {
     @PostMapping("/create")
     public String createProductPost(@ModelAttribute Product product, Model model){
         service.create(product);
+        System.out.printf("terbuat %s dengan id %s\n", product.getProductName(), product.getProductId());
         return redirectList;
     }
 
@@ -38,7 +39,8 @@ public class ProductController {
     }
 
     @PostMapping("/{id}")
-    public String updateProduct(@PathVariable String id, @ModelAttribute("product") Product product, Model model){
+    public String updateProduct(@ModelAttribute Product product){
+        System.out.printf("di controller, idnya %s itu %s\n", product.getProductName(), product.getProductId());
         
         service.updateProduct(product); // penting apa enggak?
         return redirectList;
