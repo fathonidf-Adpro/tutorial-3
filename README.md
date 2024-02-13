@@ -12,6 +12,8 @@
 
 ### 1. List the code quality issue(s) that you fixed during the exercise and explain your strategy on fixing them.
 
+[Link to Eshop Web](eshop-fathonidf-adpro.koyeb.app)
+
 1. **Unused imports** merujuk pada penggunaan *library* dalam sebuah program yang diimpor tetapi tidak digunakan dalam implementasi kode tersebut. Keberadaan impor yang tidak terpakai dapat menyebabkan overhead pada kompilasi dan membuat kode menjadi kurang rapi dalam penerapan prinsip *clean code*. 
 Oleh karena itu, adalah praktik yang baik untuk secara berkala memeriksa dan menghapus impor yang tidak digunakan agar kode tetap bersih dan efisien.
 
