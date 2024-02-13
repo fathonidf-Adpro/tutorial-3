@@ -4,15 +4,15 @@
 
 <hr>
 
-## REFLECTION
+[*Link to Eshop Web*](eshop-fathonidf-adpro.koyeb.app)
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop)
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop)
 
-### 1. List the code quality issue(s) that you fixed during the exercise and explain your strategy on fixing them.
+## REFLECTION
 
-[Link to Eshop Web](eshop-fathonidf-adpro.koyeb.app)
+### 1. List the code quality issue(s) that you fixed during the exercise and explain your strategy on fixing them.
 
 1. **Unused imports** merujuk pada penggunaan *library* dalam sebuah program yang diimpor tetapi tidak digunakan dalam implementasi kode tersebut. Keberadaan impor yang tidak terpakai dapat menyebabkan overhead pada kompilasi dan membuat kode menjadi kurang rapi dalam penerapan prinsip *clean code*. 
 Oleh karena itu, adalah praktik yang baik untuk secara berkala memeriksa dan menghapus impor yang tidak digunakan agar kode tetap bersih dan efisien.
