@@ -50,15 +50,6 @@ public class CarRepository {
         Car deletedCar = findById(id);
         carData.remove(deletedCar);
         return deletedCar;
-        // Car result = null;
-        // for (Iterator<Car> it = carData.iterator(); it.hasNext(); ) {
-        //     Car car = it.next();
-        //     if (car.getCarId().equals(id)) {
-        //         it.remove();
-        //         result = car;
-        //     }
-        // }
-        // return result; // Car not found
     }
 }
 

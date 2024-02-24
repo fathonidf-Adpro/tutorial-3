@@ -13,10 +13,14 @@ import java.util.List;
 @Controller
 @RequestMapping("/car")
 class CarController{
-    @Autowired
-    private CarService carService;
+    private final CarService carService;
+    private final String redirectList = "redirect:listCar";
 
-    private String redirectList = "redirect:listCar";
+    // Constructor Injection
+    @Autowired
+    public CarController(CarService carService) {
+        this.carService = carService;
+    }
 
     @GetMapping("/createCar")
     public String createCarPage(Model model){
@@ -47,9 +51,7 @@ class CarController{
 
     @PostMapping("/editCar")
     public String editCarPost(@ModelAttribute Car car, Model model){
-        System.out.println(car.getCarId());
         carService.update(car.getCarId(), car);
-
         return redirectList;
     }
 
