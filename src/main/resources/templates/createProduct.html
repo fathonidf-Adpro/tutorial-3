@@ -28,23 +28,39 @@
 
 <script>
     function validateForm() {
-        var nameInput = document.getElementById('nameInput').value;
-        var quantityInput = document.getElementById('quantityInput').value;
-        if (nameInput.trim() === ''){
-            alert('Please fill out the name');
-            return false; // Prevent form submission
-        }
-        if (isNaN(quantityInput)) {
-            alert('Please enter a valid quantity (numeric value).');
-            return false; // Prevent form submission
-        }
-        if (parseInt(quantityInput) > Number.MAX_SAFE_INTEGER) {
-            alert('Warning: Quantity exceeds maximum allowed value.');
-            return false; // Prevent form submission
-        }
-        return true; // Allow form submission
+      var nameInput = document.getElementById('nameInput').value.trim();
+      var quantityInput = document.getElementById('quantityInput').value.trim();
+  
+      // Check if name is empty
+      if (nameInput === '') {
+        alert('Please fill out the name.');
+        return false;
+      }
+  
+      // Check if quantity is empty
+      if (quantityInput === '') {
+        alert('Please enter a quantity.');
+        return false;
+      }
+  
+      // Validate quantity format (numeric)
+      if (isNaN(quantityInput)) {
+        alert('Please enter a valid quantity (numeric value).');
+        return false;
+      }
+  
+      // Validate quantity range (prevent overflow)
+      var quantityNumber = parseInt(quantityInput);
+      if (quantityNumber > Number.MAX_SAFE_INTEGER) {
+        alert('Warning: Quantity exceeds maximum allowed value.');
+        return false;
+      }
+  
+      // Allow form submission if all validations pass
+      return true;
     }
-</script>
+  </script>
+  
 
 </body>
 </html>
