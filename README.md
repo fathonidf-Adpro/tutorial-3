@@ -7,6 +7,7 @@
 [Link to Eshop Web *(Coming Soon)*]()
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop-tutorial-3) 
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop-tutorial-3&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop-tutorial-3) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop-tutorial-3&metric=coverage)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop-tutorial-3) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=fathonidf-adpro_eshop-tutorial-3&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=fathonidf-adpro_eshop-tutorial-3)
 
 ## REFLECTION
