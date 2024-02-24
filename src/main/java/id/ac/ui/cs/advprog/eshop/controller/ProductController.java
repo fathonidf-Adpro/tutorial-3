@@ -1,6 +1,7 @@
 package id.ac.ui.cs.advprog.eshop.controller;
 
 import id.ac.ui.cs.advprog.eshop.model.Product;
+import id.ac.ui.cs.advprog.eshop.service.CarService;
 import id.ac.ui.cs.advprog.eshop.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,13 @@ import java.util.List;
 @Controller
 @RequestMapping("/product")
 public class ProductController {
-    
-    @Autowired
-    private ProductService service;
+    private final ProductService service;
+    private final String redirectList = "redirect:list";
 
-    private String redirectList = "redirect:list";
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.service = productService;
+    }
 
     @GetMapping("/create")
     public String createProductPage(Model model){
