@@ -34,4 +34,19 @@ class CarTest {
     void testGetCarColor(){
         assertEquals("White", this.car.getCarColor());
     }
+
+    @Test
+    void testUpdateCar(){
+        Car newCar = new Car();
+        newCar.setCarName("Dakar");
+        newCar.setCarQuantity(2);
+        newCar.setCarColor("Black");
+
+        this.car.update(newCar);
+
+        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", this.car.getCarId());
+        assertNotEquals("Pajero", this.car.getCarName());
+        assertNotEquals(1, this.car.getCarQuantity());
+        assertNotEquals("White", this.car.getCarColor());
+    }
 }

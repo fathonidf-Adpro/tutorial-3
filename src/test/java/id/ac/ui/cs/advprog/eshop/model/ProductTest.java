@@ -28,4 +28,17 @@ class ProductTest {
     void testGetProductQuantity(){
         assertEquals(100, this.product.getProductQuantity());
     }
+
+    @Test
+    void testUpdateProduct(){
+        Product newProduct = new Product();
+        newProduct.setProductName("Sampo Cap Asep");
+        newProduct.setProductQuantity(200);
+
+        this.product.update(newProduct);
+
+        assertEquals("eb558e9f-1c39-460e-8860-71af6af63bd6", this.product.getProductId());
+        assertNotEquals("Sampo Cap Bambang", this.product.getProductName());
+        assertNotEquals(100, this.product.getProductQuantity());
+    }
 }

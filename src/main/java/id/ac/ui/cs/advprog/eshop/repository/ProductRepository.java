@@ -32,8 +32,7 @@ public class ProductRepository {
   public Product save(Product productUpdate){
     String productUpdateId = productUpdate.getProductId();
     Product productInRepository = this.getById(productUpdateId);
-    int idxProductBefore = productData.indexOf(productInRepository);
-    productData.set(idxProductBefore, productUpdate);
+    productInRepository.update(productUpdate);
     return productUpdate;
   }
 

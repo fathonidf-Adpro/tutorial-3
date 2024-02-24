@@ -9,4 +9,12 @@ public class Car{
     private String carName;
     private String carColor;
     private int carQuantity;
+    
+    public Car update(Car newCar){
+        this.setCarName(newCar.getCarName());
+        this.setCarColor(newCar.getCarColor());
+        this.setCarQuantity(newCar.getCarQuantity());
+
+        return this;
+    }
 }

@@ -8,4 +8,11 @@ public class Product {
     protected String productId;
     protected String productName;
     protected int productQuantity;
+    
+    public Product update(Product newProduct){
+        this.setProductName(newProduct.getProductName());
+        this.setProductQuantity(newProduct.getProductQuantity());
+
+        return this;
+    }
 }
