@@ -10,8 +10,4 @@ public class Product {
     protected String productId;
     protected String productName;
     protected int productQuantity;
-
-    public String toString(){
-      return String.format("%s:%d", productName, productQuantity);
-    }
 }
