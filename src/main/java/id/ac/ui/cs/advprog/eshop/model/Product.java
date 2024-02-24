@@ -7,13 +7,9 @@ import java.util.UUID;
 
 @Getter @Setter
 public class Product {
-    private String productId;
-    private String productName;
-    private int productQuantity;
-
-    public Product() {
-        this.productId = UUID.randomUUID().toString();
-      }
+    protected String productId;
+    protected String productName;
+    protected int productQuantity;
 
     public String toString(){
       return String.format("%s:%d", productName, productQuantity);

@@ -17,7 +17,7 @@ class HomepageTest {
     private MockMvc mockMvc;
 
     @InjectMocks
-    private HomePage homepage;
+    private HomeController homepage;
 
     @BeforeEach
     void setUp() {
