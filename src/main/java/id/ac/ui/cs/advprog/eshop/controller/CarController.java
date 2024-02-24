@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/car")
 class CarController{
     private final CarService carService;
-    private final String redirectList = "redirect:listCar";
+    private final static String redirectList = "redirect:listCar";
 
     // Constructor Injection
     @Autowired
